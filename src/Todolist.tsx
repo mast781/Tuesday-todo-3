@@ -2,6 +2,7 @@ import React, {ChangeEvent} from 'react';
 import {FilterValuesType} from './App';
 import {AddItemForm} from './AddItemForm';
 import {EditableSpan} from './EditableSpan';
+import {Button, ButtonGroup} from "@material-ui/core";
 
 export type TaskType = {
     id: string
@@ -66,7 +67,13 @@ export function Todolist(props: PropsType) {
             }
         </ul>
         <div>
-            <button className={props.filter === 'all' ? "active-filter" : ""}
+            <ButtonGroup>
+                <Button variant={props.filter === 'all' ? "outlined" : "contained"} color="primary" onClick={onAllClickHandler}>All</Button>
+                <Button variant={props.filter === 'active' ? "outlined" : "contained"} color="secondary" onClick={onActiveClickHandler}>Active</Button>
+                <Button variant={props.filter === 'completed' ? "outlined" : "contained"} color="inherit" onClick={onCompletedClickHandler}>Completed</Button>
+            </ButtonGroup>
+
+            {/*<button className={props.filter === 'all' ? "active-filter" : ""}
                     onClick={onAllClickHandler}>All
             </button>
             <button className={props.filter === 'active' ? "active-filter" : ""}
@@ -74,7 +81,7 @@ export function Todolist(props: PropsType) {
             </button>
             <button className={props.filter === 'completed' ? "active-filter" : ""}
                     onClick={onCompletedClickHandler}>Completed
-            </button>
+            </button>*/}
         </div>
     </div>
 }
