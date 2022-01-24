@@ -27,7 +27,6 @@ export function EditableSpan(props: EditableSpanPropsType) {
             value={title}
             size="small"
             variant="outlined"
-            autoFocus
             onChange={changeTitle}
             onBlur={activateViewMode}
         /> /// <input value={title} onChange={changeTitle} autoFocus onBlur={activateViewMode}/>
